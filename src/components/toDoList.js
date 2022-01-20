@@ -1,10 +1,14 @@
 
 import React from "react";
+import {ThemeContext} from '../context/themeContext';
 
 class ToDoList extends React.Component {
+    static contextType = ThemeContext;
     render () {
+        const {isDarkTheme, lightTheme, darkTheme} = this.context;
+        const theme = isDarkTheme ? darkTheme : lightTheme;
         return(
-            <div className="ui list">
+            <div style = {{background: theme.background, color: theme.text, height: '120px', textAlign: 'center', margin: '0px'}} className="ui list">
                 <p className="item">Plan the family trip</p>
                 <p className="item">Go for shopping for dinner</p>
                 <p className="item">Go for a walk</p>

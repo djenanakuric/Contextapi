@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <div className="ui raised very padded text container segment">
-        <ThemeContextProvider>
-            <NavBar />
-            <ToDoList />
-        </ThemeContextProvider>
+         <ThemeContextProvider>
+          <NavBar /> 
+           <ToDoList />
+         </ThemeContextProvider>
       </div>
     </div>
   );

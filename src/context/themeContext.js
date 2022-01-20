@@ -1,6 +1,5 @@
 import React, {createContext} from "react";
 
-
 export const ThemeContext = createContext();
 
 class ThemeContextProvider extends React.Component {
@@ -8,19 +7,19 @@ class ThemeContextProvider extends React.Component {
         isDarkTheme: true,
         lightTheme: {
             text: '#222',
-            backgroud: '#d8ddf1'
+            background: '#d8ddf1'
         },
         darkTheme: {
             text: '#fff',
-            backgroud: '#5c5c5c'
+            background: '#5c5c5c'
         }
     };
 
     render () {
-        return (
-            <ThemeContextProvider value = { { ...this.state } }>
+        return(
+            <ThemeContext.Provider value = {{...this.state}}>
                 {this.props.children}
-            </ThemeContextProvider>
+            </ThemeContext.Provider>
         );
     }
 }
